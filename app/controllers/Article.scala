@@ -1,0 +1,16 @@
+package controllers
+
+import play.api.mvc.{Action, Controller}
+import service.Avito
+import com.codahale.jerkson.Json
+
+
+object Article extends Controller {
+  def list(pageNumber: Int, query:String) = Action {
+    implicit request =>
+      //val query: String = request.getQueryString("query").get
+      val avitoService = new Avito()
+      val articlesPage = avitoService.getArticles(query, pageNumber)
+      Ok(Json.generate(articlesPage)).withHeaders(CONTENT_TYPE -> "application/json")
+  }
+}
