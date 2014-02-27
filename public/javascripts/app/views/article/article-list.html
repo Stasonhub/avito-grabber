@@ -1,0 +1,16 @@
+<span class="label label-info">Найдено: {{vm.articles.length}}</span>
+<ul class="list-group">
+    <li class="list-group-item clearfix" ng-repeat="article in vm.articles">
+                <span class="thumbnail clearfix" style="background-image:url({{article.imgUrl}})">
+
+                </span>
+        <h4 style="margin-top : 0">
+            <a ng-href="{{article.url}}" style="margin-left : 5px">{{article.title}}</a>
+        </h4>
+        <div>
+            <h4>
+                <span style="margin-left : 5px" class="label label-info">{{article.price}} р.</span>
+            </h4>
+        </div>
+    </li>
+</ul>
