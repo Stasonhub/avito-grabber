@@ -1,5 +1,8 @@
 body {
-  padding-top: 60px;
+  padding-top: 70px;
+}
+.breadcrumb a {
+  cursor: pointer;
 }
 .thumbnail {
     background : no-repeat center center ;

@@ -12,7 +12,7 @@
 
   FilterFormController.prototype = {
     search: function(){
-      this.$state.go('articleList', this.filter);
+      this.$state.go('bc.articleList', this.filter);
     }
   };
 

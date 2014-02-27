@@ -5,7 +5,7 @@
 <html>
   <head>
     <title>@title</title>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap.css")">
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
     <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
     <script src="@routes.Application.jsRoutes()"></script>
@@ -16,6 +16,7 @@
     <script src="@routes.Assets.at("javascripts/app/app.js")"></script>
     <script src="@routes.Assets.at("javascripts/app/controllers/FilterFormController.js")"></script>
     <script src="@routes.Assets.at("javascripts/app/controllers/article/ArticleListController.js")"></script>
+    <script src="@routes.Assets.at("javascripts/app/controllers/BreadcrumbController.js")"></script>
     <script src="@routes.Assets.at("javascripts/app/controllers/article/ArticleController.js")"></script>
     <script src="@routes.Assets.at("javascripts/app/services/ArticleService.js")"></script>
 

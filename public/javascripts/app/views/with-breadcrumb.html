@@ -1,0 +1,8 @@
+<ol class="breadcrumb">
+  <li ng-repeat="breadcrumb in vm.breadcrumbs" ng-class="{'active':breadcrumb.isActive}">
+
+    <a ui-sref="{{breadcrumb.state}}" ng-if="!breadcrumb.isActive">{{breadcrumb.title}}</a>
+    <span ng-if="breadcrumb.isActive">{{breadcrumb.title}}</span>
+  </li>
+</ol>
+<div ui-view></div>
