@@ -1,7 +1,7 @@
 body {
   padding-top: 70px;
 }
-.breadcrumb a {
+a {
   cursor: pointer;
 }
 .thumbnail {
