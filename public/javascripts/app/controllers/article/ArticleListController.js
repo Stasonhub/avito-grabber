@@ -3,11 +3,6 @@
   function ArticleListController($scope, articleService, $stateParams) {
     $scope.vm = this;
     var filter = $stateParams;
-    /*{
-     query: $stateParams.query,
-     priceMin: $stateParams.priceMin,
-     priceMax: $stateParams.priceMax
-     }*/
     this.articles = [];
     this.articleService = articleService;
     this.list(filter, 1);
