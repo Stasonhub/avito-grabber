@@ -6,11 +6,11 @@ import com.codahale.jerkson.Json
 
 
 object Article extends Controller {
-  def list(pageNumber: Int, query:String) = Action {
+  def list(pageNumber: Int, query:String, priceMin: Double, priceMax: Double) = Action {
     implicit request =>
       //val query: String = request.getQueryString("query").get
       val avitoService = new Avito()
-      val articlesPage = avitoService.getArticles(query, pageNumber)
+      val articlesPage = avitoService.getArticles(query, pageNumber, priceMin, priceMax)
       Ok(Json.generate(articlesPage)).withHeaders(CONTENT_TYPE -> "application/json")
   }
 }

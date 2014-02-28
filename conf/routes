@@ -7,7 +7,7 @@ GET        /                    controllers.Application.index
 
 
 # Article
-GET       /article/:pageNumber/list     controllers.Article.list(pageNumber: Int, query: String)
+GET       /article/:pageNumber/list    controllers.Article.list(pageNumber: Int, query: String, priceMin: Double ?= 0, priceMax: Double ?= 0)
 
 # jsRouter
 GET       /api/jsroutes                 controllers.Application.jsRoutes
