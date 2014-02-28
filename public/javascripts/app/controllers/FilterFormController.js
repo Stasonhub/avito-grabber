@@ -1,13 +1,9 @@
 (function(app){
-  FilterFormController.$inject = ['$scope', '$state'];
-  function FilterFormController($scope, $state){
+  FilterFormController.$inject = ['$scope', '$state', '$stateParams'];
+  function FilterFormController($scope, $state, $stateParams){
     $scope.vm = this;
     this.$state = $state;
-    this.filter = {
-      query: 'Цифровое пианино',
-      priceMin: 10000,
-      priceMax: 50000
-    };
+    this.filter = $stateParams;
   }
 
   FilterFormController.prototype = {

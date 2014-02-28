@@ -7,7 +7,7 @@ app.config(['$stateProvider', function ($stateProvider) {
     templateUrl: vs('/views/with-breadcrumb.html'),
     controller: 'BreadcrumbController'
   }).state('bc.home', {
-    url: '/',
+    url: '/?query&priceMin&priceMax',
     templateUrl: vs('/views/search-form.html'),
     controller: 'FilterFormController',
     breadcrumbs: [{
