@@ -3,12 +3,15 @@ import scala.collection.JavaConversions._
 import org.jsoup.nodes.Document
 import model.{Article, Page}
 import org.jsoup.Jsoup
+import play.api.Logger
 
 class Avito {
   val rootUrl = "http://www.avito.ru"
 
   def getArticles(query: String, pageNumber: Int, priceMin: Double, priceMax: Double): Page[Article] = {
-    val document = Jsoup.connect(s"$rootUrl/moskva?q=$query&p=$pageNumber")
+    val url = s"$rootUrl/moskva?q=$query&p=$pageNumber"
+    Logger.info(s"avito url: $url")
+    val document = Jsoup.connect(url)
       .userAgent("Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36")
       .timeout(10000).get
     val e = document.select("div.c-b-0")
