@@ -13,6 +13,6 @@ object Article extends Controller {
       Logger.info(s"avito query: $q")
       val avitoService = new Avito()
       val articlesPage = avitoService.getArticles(query, pageNumber, priceMin, priceMax)
-      Ok(Json.generate(articlesPage)).withHeaders(CONTENT_TYPE -> "application/json")
+      Ok(Json.generate(articlesPage)).withHeaders(CONTENT_TYPE -> "application/json;charset=utf-8")
   }
 }
