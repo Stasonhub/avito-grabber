@@ -1,7 +1,7 @@
 (function (app) {
-  BreadcrumbController.$inject = ['$scope', '$$state', '$state'];
+  BreadcrumbController.$inject = ['$scope', '$state'];
 
-  function BreadcrumbController($scope, $$state, $state) {
+  function BreadcrumbController($scope, $state) {
     $scope.vm = this;
     var that = this;
     $scope.$on('$stateChangeSuccess',

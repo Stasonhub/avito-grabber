@@ -8,7 +8,10 @@
 
   FilterFormController.prototype = {
     search: function(){
-      this.$state.go('bc.articleList', this.filter);
+      this.$state.go('articleList', this.filter);
+    },
+    clearForm: function(){
+      this.filter = {};
     }
   };
 

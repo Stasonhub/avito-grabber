@@ -15,7 +15,7 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a ui-sref="bc.home">Новый поиск</a></li>
+          <li><a href="/">Новый поиск</a></li>
 
         </ul>
 
@@ -25,6 +25,13 @@
   </nav>
 
   <div class="container">
+    <ol class="breadcrumb" ng-controller="BreadcrumbController">
+      <li ng-repeat="breadcrumb in vm.breadcrumbs" ng-class="{'active':breadcrumb.isActive}">
+
+        <a ui-sref="{{breadcrumb.state}}" ng-if="!breadcrumb.isActive">{{breadcrumb.title}}</a>
+        <span ng-if="breadcrumb.isActive">{{breadcrumb.title}}</span>
+      </li>
+    </ol>
     <div ui-view></div>
   </div>
 }

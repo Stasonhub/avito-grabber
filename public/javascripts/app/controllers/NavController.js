@@ -1,11 +1,16 @@
 (function(app){
-  NavController.$inject = ['$scope', '$state'];
-  function NavController($scope, $state){
+  NavController.$inject = ['$scope', '$state', '$stateParams'];
+  function NavController($scope, $state, $stateParams){
     $scope.vm = this;
     $scope.url = $state.href;
-    var u = $state.href('bc.home');
+    this.$stateParams = $stateParams;
   }
 
+  NavController.prototype = {
+    clearForm: function(){
+      delete this.$stateParams.query;
+    }
+  }
   app.controller('NavController', NavController);
   return NavController;
 }(app));
