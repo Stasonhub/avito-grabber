@@ -1,6 +1,6 @@
 var app = angular.module('avitoApp', ['ngRoute', 'ui.router']);
 function vs(url){
-  return '/assets/javascripts/app' + url;
+  return '/assets/app' + url;
 }
 app.config(['$stateProvider', function ($stateProvider) {
   $stateProvider.state('startPage', {
