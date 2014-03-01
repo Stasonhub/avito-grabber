@@ -9,7 +9,7 @@ import play.api.Logger
 object Article extends Controller {
   def list(pageNumber: Int, query:String, priceMin: Double, priceMax: Double) = Action {
     implicit request =>
-      val q = query.getBytes().reduce((b, c) => b.toString + c.toString)
+      val q = query.getBytes().foldLeft("")((b, c) => b + c.toString)
       Logger.info(s"avito query: $q")
       val avitoService = new Avito()
       val articlesPage = avitoService.getArticles(query, pageNumber, priceMin, priceMax)
