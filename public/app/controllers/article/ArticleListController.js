@@ -15,7 +15,7 @@
         that.articles = that.articles.concat(data.articles);
         return data.hasNextPage;
       }).then(function (hasNextPage) {
-        if (hasNextPage && pageNumber < 200) {
+        if (hasNextPage && that.articles.length < 200) {
           that.list(filter, pageNumber + 1);
         }
       });
