@@ -13,7 +13,7 @@ app.config(['$stateProvider', function ($stateProvider) {
       isActive: true
     }]
   }).state('home', {
-    url: '/?query&priceMin&priceMax',
+    url: '/?query&priceMin&priceMax&region',
     templateUrl: vs('/views/search-form.html'),
     controller: 'FilterFormController',
     breadcrumbs: [{
@@ -22,7 +22,7 @@ app.config(['$stateProvider', function ($stateProvider) {
       isActive: true
     }]
   }).state('articleList', {
-    url: '/list?query&priceMin&priceMax',
+    url: '/list?query&priceMin&priceMax&region',
     templateUrl: vs('/views/article/article-list.html'),
     controller: 'ArticleListController',
     breadcrumbs: [{

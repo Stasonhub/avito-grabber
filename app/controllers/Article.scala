@@ -7,10 +7,10 @@ import play.api.Logger
 
 
 object Article extends Controller {
-  def list(pageNumber: Int, query:String, priceMin: Double = 0, priceMax: Double = 0) = Action {
+  def list(pageNumber: Int, query:String, priceMin: Double = 0, priceMax: Double = 0, region: String = "moskva") = Action {
     implicit request =>
       val avitoService = new Avito()
-      val articlesPage = avitoService.getArticles(query, pageNumber, priceMin, priceMax)
+      val articlesPage = avitoService.getArticles(query, pageNumber, priceMin, priceMax, region)
       Ok(Json.generate(articlesPage)).withHeaders(CONTENT_TYPE -> "application/json;charset=utf-8")
   }
 }

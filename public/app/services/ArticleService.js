@@ -6,7 +6,7 @@ app.service('ArticleService', ['$http', function ($http) {
 
   return {
     getList: function (filter, pageNumber) {
-      return $http.get(jsRoutes.controllers.Article.list(pageNumber).url, {params: {query: encode(filter.query), priceMin: filter.priceMin, priceMax: filter.priceMax}}).then(function (response) {
+      return $http.get(jsRoutes.controllers.Article.list(pageNumber).url, {params: {query: encode(filter.query), priceMin: filter.priceMin, priceMax: filter.priceMax, region: filter.region}}).then(function (response) {
         return response.data;
       });
     }
