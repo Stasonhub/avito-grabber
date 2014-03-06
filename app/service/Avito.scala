@@ -9,6 +9,7 @@ class Avito {
   val rootUrl = "http://www.avito.ru"
 
   def getArticles(query: String, pageNumber: Int, priceMin: Double, priceMax: Double): Page[Article] = {
+    require(priceMin <= priceMax)
     val url = s"$rootUrl/moskva?q=$query&p=$pageNumber"
 
     val document = Jsoup.connect(url)
@@ -31,7 +32,7 @@ class Avito {
         val isStore = element.select(".data p").text().toLowerCase.contains("магазин")
 
         Article(title, price.toDouble, imageUrl, rootUrl + url, isStore || isCompany)
-      }).filter(a => a.price != 0.toString && !a.isCommercial && (a.price >= priceMin && a.price <= priceMax)),
+      }).filter(a => a.price != 0.toString && !a.isCommercial && ((priceMax == 0d) || (a.price >= priceMin && a.price <= priceMax))),
       nextLink.length > 0
     )
   }
